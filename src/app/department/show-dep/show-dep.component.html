@@ -1,0 +1,39 @@
+
+<div style="overflow: auto;">
+<div class="mat-elevation-z8">
+    
+
+    <mat-table [datasource] = "listdata">
+       <mat-header-row *matHeaderRowDef="displayedColumns"> </mat-header-row>
+      <mat-row *matRowDef="let row; colums:displayedColumns;"></mat-row>
+
+     <ng-container matcolumnDef="option">
+       <mat-header-cell *matHeadercellDef>option</mat-header-cell>
+       <mat-cell *matcellDef="let row">
+           <button mat-icon-button (click)="onEdit(row)">
+               <mat-icon>launch</mat-icon>
+           </button>
+           <button mat-icon-button color="warn" (click)="onDelete(row.DepartmentID)">
+            <mat-icon>delete_outline</mat-icon>
+          </button>
+       </mat-cell>
+
+       </ng-container>
+
+     <ng-container MatcolumnDef="DepartmentID">
+      <mat-header-cell *matHeadercellDef>DepartmentID</mat-header-cell>
+       <mat-header-cell *matcellDef="let element">{{element.DepartmentID}}</mat-header-cell>
+         </ng-container>
+
+      <ng-container MatcolumnDef="DepartmentName">
+      <mat-header-cell *matHeadercellDef>DepartmentName</mat-header-cell>
+       <mat-header-cell *matcellDef="let element">{{element.DepartmentName}}</mat-header-cell>
+        </ng-container>
+
+     </mat-table>
+ 
+</div>
+
+
+
+</div>
